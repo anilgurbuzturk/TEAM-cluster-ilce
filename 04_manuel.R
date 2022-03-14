@@ -34,8 +34,9 @@ km_ulas <- km_ulas %>%
 count(km_ulas, cluster_16, sort = TRUE)
 
 
-# Karakter sınıfında olanları sayıya çevir
+# Karakter sınıfında olanları sayıya çrevi
 
 km_ulas$cluster_16 <- as.numeric(km_ulas$cluster_16)
+
 
 
