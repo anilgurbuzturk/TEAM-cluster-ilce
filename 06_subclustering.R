@@ -60,5 +60,5 @@ km_ulas_final <- km_ulas_final %>%
                                 subcluster_16 == "2" ~ "17",
                                 subcluster_16 == "3" ~ "18"))
 
-
+km_ulas_final$cluster_18 <- as.numeric(km_ulas_final$cluster_18)
 
