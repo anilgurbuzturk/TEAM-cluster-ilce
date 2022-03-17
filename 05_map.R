@@ -29,7 +29,7 @@ pal_ilce_k18 <- colorNumeric(palette = c("#990099", "#FF57FF", "#FFBDFF", "#FA00
                                          "#FF0000", "#FD5961", "#FFA3A3", "#C26A6E",
                                          "#C59196", "#D9D9D9", "#FCFFE1", "#FAFF8F",
                                          "#F8E102", "#BEAC02", "#FFBD5D", "#FF9900",
-                                         "#8DB4E2", "#92CDDC"),
+                                         "#A55039", "#C08C58"),
                              domain = ilce_harita@data$k18)
 
 pal_ilce_k12 <- colorNumeric(palette = c("#990099", "#FF57FF", "#FF0000", "#FD5961",
@@ -37,7 +37,7 @@ pal_ilce_k12 <- colorNumeric(palette = c("#990099", "#FF57FF", "#FF0000", "#FD59
                                          "#BEAC02", "#FF9900", "#A55039", "#C08C58"),
                              domain = ilce_harita@data$k12)
 
-pal_ilce_k6 <- colorNumeric(palette = c("#D34DA6", "#784865", "#D2BCBF",
+pal_ilce_k6 <- colorNumeric(palette = c("#D34DA6", "#FF0000", "#D2BCBF",
                                         "#FFC89B", "#CCFF33", "#FF6600"),
                             domain = ilce_harita@data$k6)
 
@@ -53,7 +53,7 @@ leaflet(ilce_harita) %>%
   addTiles() %>%
   addProviderTiles(provider = providers$CartoDB.PositronNoLabels) %>%
   addPolygons(color = "#444444",
-              weight = 0.9,
+              weight = 1,
               opacity = 1,
               fillOpacity = 0.9,
               fillColor = ~pal_ilce_k18(ilce_harita@data$k18),
@@ -67,7 +67,7 @@ leaflet(ilce_harita) %>%
                                           direction = "auto"),
               group = "K18 kümeleme") %>%
   addPolygons(color = "#444444",
-              weight = 0.9,
+              weight = 1,
               opacity = 1,
               fillOpacity = 0.9,
               fillColor = ~pal_ilce_k12(ilce_harita@data$k12),
@@ -81,7 +81,7 @@ leaflet(ilce_harita) %>%
                                           direction = "auto"),
               group = "K12 kümeleme") %>%
   addPolygons(color = "#444444",
-              weight = 0.9,
+              weight = 1,
               opacity = 1,
               fillOpacity = 0.9,
               fillColor = ~pal_ilce_k6(ilce_harita@data$k6),
