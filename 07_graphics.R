@@ -2,7 +2,7 @@ library(tidyverse)
 
 library(ggplot2)
 
-
+View(km_ulas_final)
 str(km_ulas_final)
 
 head(km_ulas_final, 10)
@@ -75,7 +75,7 @@ km_ulas_final %>%
                                 "5", "6", "7", "8",
                                 "9", "10", "11", "12",
                                 "13", "14", "15", "16"),
-                     values=c("#FD0321", "#FD5961", "#FA007D", "#FFA3A3",
+                     values = c("#FD0321", "#FD5961", "#FA007D", "#FFA3A3",
                               "#FFBDFF", "#DDD9C4", "#31869B", "#990099",
                               "#FF57FF", "#3399FF", "#85C2FF", "#FF9900",
                               "#FFBD5D", "#FFE3AB", "#FFF9E5", "#DAEEF3")) +
@@ -101,7 +101,7 @@ km_ulas_final %>%
                                 "5", "6", "7", "8",
                                 "9", "10", "11", "12",
                                 "13", "14", "15", "16"),
-                     values=c("#FD0321", "#FD5961", "#FA007D", "#FFA3A3",
+                     values = c("#FD0321", "#FD5961", "#FA007D", "#FFA3A3",
                               "#FFBDFF", "#DDD9C4", "#31869B", "#990099",
                               "#FF57FF", "#3399FF", "#85C2FF", "#FF9900",
                               "#FFBD5D", "#FFE3AB", "#FFF9E5", "#DAEEF3")) +
@@ -114,7 +114,7 @@ km_ulas_final %>%
                                 "5", "6", "7", "8",
                                 "9", "10", "11", "12",
                                 "13", "14", "15", "16"),
-                     values=c("#FD0321", "#FD5961", "#FA007D", "#FFA3A3",
+                     values = c("#FD0321", "#FD5961", "#FA007D", "#FFA3A3",
                               "#FFBDFF", "#DDD9C4", "#31869B", "#990099",
                               "#FF57FF", "#3399FF", "#85C2FF", "#FF9900",
                               "#FFBD5D", "#FFE3AB", "#FFF9E5", "#DAEEF3")) +
@@ -143,7 +143,7 @@ km_ulas_final %>%
                                 "5", "6", "7", "8",
                                 "9", "10", "11", "12",
                                 "13", "14", "15", "16"),
-                     values=c("#FD0321", "#FD5961", "#FA007D", "#FFA3A3",
+                     values = c("#FD0321", "#FD5961", "#FA007D", "#FFA3A3",
                               "#FFBDFF", "#DDD9C4", "#31869B", "#990099",
                               "#FF57FF", "#3399FF", "#85C2FF", "#FF9900",
                               "#FFBD5D", "#FFE3AB", "#FFF9E5", "#DAEEF3")) +
@@ -173,7 +173,7 @@ km_ulas_final %>%
                                 "5", "6", "7", "8",
                                 "9", "10", "11", "12",
                                 "13", "14", "15", "16"),
-                     values=c("#FD0321", "#FD5961", "#FA007D", "#FFA3A3",
+                     values = c("#FD0321", "#FD5961", "#FA007D", "#FFA3A3",
                               "#FFBDFF", "#DDD9C4", "#31869B", "#990099",
                               "#FF57FF", "#3399FF", "#85C2FF", "#FF9900",
                               "#FFBD5D", "#FFE3AB", "#FFF9E5", "#DAEEF3")) +

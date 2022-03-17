@@ -41,12 +41,31 @@ pal_ilce_k6 <- colorNumeric(palette = c("#D34DA6", "#FF0000", "#D2BCBF",
                                         "#FFC89B", "#CCFF33", "#FF6600"),
                             domain = ilce_harita@data$k6)
 
-labels_ilce <- sprintf("<strong>%s</strong><br/>Seçmen: %s<br/>Cumhur: %s<br/>Millet: %s<br/>HDP: %s",
-                       ilce_harita@data$il_ilce, 
+labels_ilce_k18 <- sprintf("<strong>%s</strong><br/>Küme: %s<br/>Seçmen: %s<br/>Cumhur: %s<br/>Millet: %s<br/>HDP: %s",
+                       ilce_harita@data$il_ilce,
+                       ilce_harita@data$k18,
                        ilce_harita@data$secmen,
                        ilce_harita@data$Cİ,
                        ilce_harita@data$Mİ,
-                       ilce_harita@data$HDP) %>% 
+                       ilce_harita@data$HDP) %>%
+  lapply(htmltools::HTML)
+
+labels_ilce_k12 <- sprintf("<strong>%s</strong><br/>Küme: %s<br/>Seçmen: %s<br/>Cumhur: %s<br/>Millet: %s<br/>HDP: %s",
+                          ilce_harita@data$il_ilce,
+                          ilce_harita@data$k12,
+                          ilce_harita@data$secmen,
+                          ilce_harita@data$Cİ,
+                          ilce_harita@data$Mİ,
+                          ilce_harita@data$HDP) %>%
+  lapply(htmltools::HTML)
+
+labels_ilce_k6 <- sprintf("<strong>%s</strong><br/>Küme: %s<br/>Seçmen: %s<br/>Cumhur: %s<br/>Millet: %s<br/>HDP: %s",
+                          ilce_harita@data$il_ilce,
+                          ilce_harita@data$k6,
+                          ilce_harita@data$secmen,
+                          ilce_harita@data$Cİ,
+                          ilce_harita@data$Mİ,
+                          ilce_harita@data$HDP) %>%
   lapply(htmltools::HTML)
 
 leaflet(ilce_harita) %>%
@@ -60,7 +79,7 @@ leaflet(ilce_harita) %>%
               highlightOptions = options(weight = 2, 
                                          color = "white", 
                                          bringToFront = TRUE),
-              label = labels_ilce,
+              label = labels_ilce_k18,
               labelOptions = labelOptions(style = list("font-weight" = "normal", 
                                                        padding = "3px 8px"),
                                           textsize = "12px", 
@@ -74,7 +93,7 @@ leaflet(ilce_harita) %>%
               highlightOptions = options(weight = 2, 
                                          color = "white", 
                                          bringToFront = TRUE),
-              label = labels_ilce,
+              label = labels_ilce_k12,
               labelOptions = labelOptions(style = list("font-weight" = "normal", 
                                                        padding = "3px 8px"),
                                           textsize = "12px", 
@@ -88,7 +107,7 @@ leaflet(ilce_harita) %>%
               highlightOptions = options(weight = 2, 
                                          color = "white", 
                                          bringToFront = TRUE),
-              label = labels_ilce,
+              label = labels_ilce_k6,
               labelOptions = labelOptions(style = list("font-weight" = "normal", 
                                                        padding = "3px 8px"),
                                           textsize = "12px", 
