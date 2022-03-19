@@ -25,12 +25,12 @@ colnames(ilce_harita@data)
 
 # K18, K12 ve K6'lı harita
 
-pal_ilce_k18 <- colorNumeric(palette = c("#990099", "#FF57FF", "#FFBDFF", "#FA007D",
-                                         "#FF0000", "#FD5961", "#FFA3A3", "#C26A6E",
-                                         "#C59196", "#D9D9D9", "#FCFFE1", "#FAFF8F",
-                                         "#F8E102", "#BEAC02", "#FFBD5D", "#FF9900",
-                                         "#A55039", "#C08C58"),
-                             domain = ilce_harita@data$k18)
+pal_ilce_k20 <- colorNumeric(palette = c("#990099", "#FF57FF", "#FFBDFF", "#FA007D",
+                                         "#FF0000", "#FD5961", "#FFA3A3", "#CCC3DB",
+                                         "#D5595F", "#C59196", "#D9D9D9", "#FDE9D9",
+                                         "#FCFFE1", "#FAFF8F", "#F8E102", "#BEAC02",
+                                         "#FFBD5D", "#FF9900", "#A55039", "#C08C58"),
+                             domain = ilce_harita@data$k20)
 
 pal_ilce_k12 <- colorNumeric(palette = c("#990099", "#FF57FF", "#FF0000", "#FD5961",
                                          "#FFA3A3", "#D8B6B9", "#FEE09C", "#F8E102",
@@ -41,9 +41,9 @@ pal_ilce_k6 <- colorNumeric(palette = c("#D34DA6", "#FF0000", "#D2BCBF",
                                         "#FFC89B", "#CCFF33", "#FF6600"),
                             domain = ilce_harita@data$k6)
 
-labels_ilce_k18 <- sprintf("<strong>%s</strong><br/>Küme: %s<br/>Seçmen: %s<br/>Cumhur: %s<br/>Millet: %s<br/>HDP: %s",
+labels_ilce_k20 <- sprintf("<strong>%s</strong><br/>Küme: %s<br/>Seçmen: %s<br/>Cumhur: %s<br/>Millet: %s<br/>HDP: %s",
                        ilce_harita@data$il_ilce,
-                       ilce_harita@data$k18,
+                       ilce_harita@data$k20,
                        ilce_harita@data$secmen,
                        ilce_harita@data$Cİ,
                        ilce_harita@data$Mİ,
@@ -75,11 +75,11 @@ leaflet(ilce_harita) %>%
               weight = 1,
               opacity = 1,
               fillOpacity = 0.9,
-              fillColor = ~pal_ilce_k18(ilce_harita@data$k18),
+              fillColor = ~pal_ilce_k20(ilce_harita@data$k20),
               highlightOptions = options(weight = 2, 
                                          color = "white", 
                                          bringToFront = TRUE),
-              label = labels_ilce_k18,
+              label = labels_ilce_k20,
               labelOptions = labelOptions(style = list("font-weight" = "normal", 
                                                        padding = "3px 8px"),
                                           textsize = "12px", 
