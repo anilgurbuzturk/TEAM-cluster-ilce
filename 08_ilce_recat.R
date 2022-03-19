@@ -6,15 +6,16 @@ library(tidyverse)
 library(readxl)
 
 
-ilce_recat <- read_excel(path = "TEAM_ilce_kmeans.recat_17.03.22.xlsx", 
+ilce_recat <- read_excel(path = "TEAM_ilce_kmeans.recat_19.03.22.xlsx", 
                          sheet = "final", 
-                         col_types = c("numeric", "text", "text", 
+                         col_types = c("numeric", "text", "text", "text",
                                        "numeric", "numeric", "numeric", 
                                        "numeric", "numeric", "numeric", 
                                        "numeric", "numeric", "numeric", 
                                        "numeric", "numeric", "numeric", 
                                        "numeric", "numeric", "numeric", 
-                                       "numeric", "numeric", "numeric"))
+                                       "numeric", "numeric", "numeric",
+                                       "numeric"))
 
 View(ilce_recat)
 
@@ -44,5 +45,7 @@ ilce_recat$Mİ <- round(ilce_recat$Mİ, digits = 2)
 head(x = ilce_recat, n = 10)
 
 str(object = ilce_recat)
+
+count(ilce_recat, k20)
 
 

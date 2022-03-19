@@ -124,4 +124,3 @@ leaflet(ilce_harita) %>%
                            title = "Ben neredeyim?",
                            onClick = JS("function(btn, map){ map.locate({setView: true}); }")))
 
-

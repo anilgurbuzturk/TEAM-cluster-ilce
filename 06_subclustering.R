@@ -196,3 +196,37 @@ sub_km_30 <- cbind(km_30[, c(1, 3, 4)], subcluster_30 = sub_km_30$cluster)
 count(sub_km_30, subcluster_30)
 
 write_xlsx(sub_km_30, path = "TEAM_ilce_km_subcluster_30.xlsx")
+
+####
+colnames(ilce_recat)
+
+km1_2_3 <- ilce_recat %>%
+  filter(k18 == 1 | k18 == 2 | k18 == 3) %>%
+  select(id, subcluster, k6, k12, k18)
+
+km1_2_3 <- merge(x = km1_2_3, y = tr_kume_v3, by = "id")
+
+nrow(km1_2_3)
+
+secim_km1_2_3 <- km1_2_3 %>%
+  select(sege2017, belediye_meclis_cumhur_2019, 
+         cb_selahattin_2018, milletv_gecerli_oy_2018, 
+         milletv_akp_2018, milletv_iyi_oran_2018,
+         milletv_mhp_oy_oran_2018, milletv_saadet_oran_2018, 
+         referandum_evet_2017, kasim_akp_2015, 
+         haziran_hdp_2015, belediye_chp_2014, referandum_evet_2010, 
+         akp_15_18_fark, referandum_10_17_fark, 
+         log_SeçmenCami, yas_CocukBagm, ci_muh_katsayi)
+
+secim_km1_2_3 <- as.data.frame(scale(secim_km1_2_3))
+
+sub_km1_2_3 <- kmeans(secim_km1_2_3, centers = 3, nstart = 25)
+
+sub_km1_2_3 <- cbind(km1_2_3[, c(1, 3, 4)], subcluster1_2_3 = sub_km1_2_3$cluster)
+
+count(sub_km1_2_3, subcluster1_2_3)
+
+write_xlsx(sub_km1_2_3, path = "TEAM_ilce_km_sub_1_2_3.xlsx")
+
+
+
