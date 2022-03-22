@@ -31,15 +31,15 @@ print(km30) # Print the results
 
 # Orijinal veriden elde edilen küme sonuçlarını "cluster" sütununa ekle
 
-tr_km <- cbind(tr_kume_v3[, c(1,2,3,4)], cluster_30 = km30$cluster)
+tr_km <- cbind(tr_kume_v4[, c(1,2,3,4)], k30 = km30$cluster)
 
 head(tr_km)
 
-count(tr_km, cluster_30)
+count(tr_km, k30)
 
 
 # İşlenen veriyi tekrar excele aktar
 
-write_xlsx(tr_km, path = "TEAM_ilce_kmeans.xlsx")
+write_xlsx(tr_km, path = "TEAM_ilce_k30s.xlsx")
 
 

@@ -8,14 +8,24 @@ library(readxl)
 
 ilce_recat <- read_excel(path = "TEAM_ilce_kmeans.recat_19.03.22.xlsx", 
                          sheet = "final", 
-                         col_types = c("numeric", "text", "text", "text",
+                         col_types = c("numeric", "text", "text", 
+                                       "text", "text", "text", "numeric", 
                                        "numeric", "numeric", "numeric", 
                                        "numeric", "numeric", "numeric", 
                                        "numeric", "numeric", "numeric", 
                                        "numeric", "numeric", "numeric", 
                                        "numeric", "numeric", "numeric", 
-                                       "numeric", "numeric", "numeric",
+                                       "numeric", "numeric", "numeric", 
+                                       "numeric", "numeric", "numeric", 
+                                       "numeric", "numeric", "numeric", 
+                                       "numeric", "numeric", "numeric", 
+                                       "numeric", "numeric", "numeric", 
+                                       "numeric", "numeric", "numeric", 
+                                       "numeric", "numeric", "numeric", 
+                                       "numeric", "numeric", "numeric", 
                                        "numeric"))
+
+ilce_recat <- ilce_recat[, 1:24]
 
 View(ilce_recat)
 

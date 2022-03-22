@@ -26,8 +26,8 @@ colnames(ilce_harita@data)
 # K18, K12 ve K6'lı harita
 
 pal_ilce_k20 <- colorNumeric(palette = c("#990099", "#FF57FF", "#FFBDFF", "#FA007D",
-                                         "#FF0000", "#FD5961", "#FFA3A3", "#CCC3DB",
-                                         "#D5595F", "#C59196", "#D9D9D9", "#FDE9D9",
+                                         "red3", "red", "brown1", "lightsalmon",
+                                         "indianred1", "salmon2", "palegoldenrod", "#FDE9D9",
                                          "#FCFFE1", "#FAFF8F", "#F8E102", "#BEAC02",
                                          "#FFBD5D", "#FF9900", "#A55039", "#C08C58"),
                              domain = ilce_harita@data$k20)

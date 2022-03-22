@@ -2,44 +2,48 @@ library(tidyverse)
 
 library(ggplot2)
 
-View(km_ulas_final)
-str(km_ulas_final)
+View(ilce_recat)
+str(ilce_recat)
 
-head(km_ulas_final, 10)
+head(ilce_recat, 10)
 
-colnames(km_ulas_final)
+colnames(ilce_recat)
 
 
 # Boxplot Kümelerde Cumhur İttifakı Oy Oranı
 
-km_ulas_final %>%
+ilce_recat %>%
   ggplot() +
-  geom_boxplot(mapping = aes(x = as.factor(cluster_16), y = Cİ,
-                             color = as.factor(cluster_16)),
+  geom_boxplot(mapping = aes(x = as.factor(k20), y = Cİ,
+                             color = as.factor(k20)),
                varwidth = TRUE,
                fill = NA,
                lwd = 1) +
   scale_color_manual(breaks = c("1", "2", "3", "4",
                                "5", "6", "7", "8",
                                "9", "10", "11", "12",
-                               "13", "14", "15", "16"),
-                    values=c("#FD0321", "#FD5961", "#FA007D", "#FFA3A3",
-                             "#FFBDFF", "#DDD9C4", "#31869B", "#990099",
-                             "#FF57FF", "#3399FF", "#85C2FF", "#FF9900",
-                             "#FFBD5D", "#FFE3AB", "#FFF9E5", "#DAEEF3")) +
-  geom_jitter(mapping = aes(x = as.factor(cluster_16), y = Cİ, 
-                            color = as.factor(cluster_16)),
+                               "13", "14", "15", "16",
+                               "17", "18", "19", "20"),
+                    values = c("#990099", "#FF57FF", "#FFBDFF", "#FA007D",
+                               "red3", "red", "tomato1", "salmon1",
+                               "#D5595F", "#C59196", "palegoldenrod", "#FDE9D9",
+                               "#FCFFE1", "#FAFF8F", "#F8E102", "#BEAC02",
+                               "#FFBD5D", "#FF9900", "#A55039", "#C08C58")) +
+  geom_jitter(mapping = aes(x = as.factor(k20), y = Cİ, 
+                            color = as.factor(k20)),
               width = 0.2,
               alpha = 0.8,
               size = 1) +
   scale_color_manual(breaks = c("1", "2", "3", "4",
-                                  "5", "6", "7", "8",
-                                  "9", "10", "11", "12",
-                                  "13", "14", "15", "16"),
-                       values=c("#FD0321", "#FD5961", "#FA007D", "#FFA3A3",
-                                "#FFBDFF", "#DDD9C4", "#31869B", "#990099",
-                                "#FF57FF", "#3399FF", "#85C2FF", "#FF9900",
-                                "#FFBD5D", "#FFE3AB", "#FFF9E5", "#DAEEF3")) +
+                                "5", "6", "7", "8",
+                                "9", "10", "11", "12",
+                                "13", "14", "15", "16",
+                                "17", "18", "19", "20"),
+                     values = c("#990099", "#FF57FF", "#FFBDFF", "#FA007D",
+                                "red3", "red", "tomato1", "salmon1",
+                                "#D5595F", "#C59196", "palegoldenrod", "#FDE9D9",
+                                "#FCFFE1", "#FAFF8F", "#F8E102", "#BEAC02",
+                                "#FFBD5D", "#FF9900", "#A55039", "#C08C58")) +
   theme_minimal() +
   theme(legend.position = "none") +
   labs(title = "Kümelerde Cumhur İttifakı Oy Oranı",
@@ -62,7 +66,7 @@ km_ulas_final %>%
                                 "5", "6", "7", "8",
                                 "9", "10", "11", "12",
                                 "13", "14", "15", "16"),
-                     values=c("#FD0321", "#FD5961", "#FA007D", "#FFA3A3",
+                     values = c("#FD0321", "#FD5961", "#FA007D", "#FFA3A3",
                               "#FFBDFF", "#DDD9C4", "#31869B", "#990099",
                               "#FF57FF", "#3399FF", "#85C2FF", "#FF9900",
                               "#FFBD5D", "#FFE3AB", "#FFF9E5", "#DAEEF3")) +
